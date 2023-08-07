@@ -1,0 +1,12 @@
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/sdl_headers_copy.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/SDL2main.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/SDL2.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/SDL2-static.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/SDL2_test.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/uninstall.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/edit_cache.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/rebuild_cache.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/list_install_components.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/install.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/install/local.dir
+/files/Programming/Projects/particle_simulation/lib/SDL2-2.26.5/build/CMakeFiles/install/strip.dir
