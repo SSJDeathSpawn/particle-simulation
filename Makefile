@@ -2,8 +2,8 @@ CC := gcc
 CFLAGS := -Wall -I lib/glfw/include -I lib/glad/include
 LDFLAGS := lib/glad/src/glad.o lib/glfw/src/libglfw3.a -lm
 
-# compile macros
-EXEC := bin/app
+#Binary folder
+BIN := bin
 
 # Get the source files recursively
 SRCS := $(wildcard src/**/*.c) $(wildcard src/*.c) $(wildcard src/**/**/*.c) $(wildcard src/**/**/**/*.c)
@@ -11,11 +11,12 @@ SRCS := $(wildcard src/**/*.c) $(wildcard src/*.c) $(wildcard src/**/**/*.c) $(w
 # generate names of object files
 OBJS := $(SRCS:.c=.o)
 
-# name of executable
-EXEC := bin/app
 
 # default recipe
-all: libs $(EXEC)
+all: dirs libs app
+
+dirs:
+	mkdir -p ./$(BIN)
 
 #recipe for compiling the libraries
 libs:
@@ -23,15 +24,18 @@ libs:
 	cd lib/glfw && cmake -S . && make
 
 # recipe for building the final executable
-$(EXEC): $(OBJS) $(HDRS) Makefile
-	$(CC) -o $@ $(OBJS) $(CFLAGS) $(LDFLAGS)
+app: $(OBJS)
+	$(CC) -o $(BIN)/app $^ $(LDFLAGS)
 
 # recipe for building object files
-$(OBJS): $(@:.o=.c) $(HDRS) Makefile
+$(OBJS): $(@:.o=.c)
 	$(CC) -o $@ $(@:.o=.c) -c $(CFLAGS)
+
+run: all
+	$(BIN)/app
 
 # recipe to clean the workspace
 clean:
 	rm -f $(OBJS)
 
-.PHONY: all clean win
+.PHONY: all clean run
