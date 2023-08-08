@@ -1,5 +1,6 @@
 CC := gcc
-CFLAGS := -Wall -I lib/SDL2/include -I lib/glad/include -L lib/SDL2/build -lSDL2 -lm
+CFLAGS := -Wall -I lib/glfw/include -I lib/glad/include
+LDFLAGS := lib/glad/src/glad.o lib/glfw/src/libglfw3.a -lm
 
 # compile macros
 EXEC := bin/app
@@ -14,11 +15,16 @@ OBJS := $(SRCS:.c=.o)
 EXEC := bin/app
 
 # default recipe
-all: $(EXEC)
+all: libs $(EXEC)
+
+#recipe for compiling the libraries
+libs:
+	cd lib/glad && $(CC) -o src/glad.o -I include -c src/glad.c
+	cd lib/glfw && cmake -S . && make
 
 # recipe for building the final executable
 $(EXEC): $(OBJS) $(HDRS) Makefile
-	$(CC) -o $@ $(OBJS) $(CFLAGS)
+	$(CC) -o $@ $(OBJS) $(CFLAGS) $(LDFLAGS)
 
 # recipe for building object files
 $(OBJS): $(@:.o=.c) $(HDRS) Makefile

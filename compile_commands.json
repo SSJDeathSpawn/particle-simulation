@@ -2,10 +2,24 @@
   {
     "arguments": [
       "/usr/bin/gcc",
+      "-I",
+      "include",
+      "-c",
+      "-o",
+      "src/glad.o",
+      "src/glad.c"
+    ],
+    "directory": "/files/Programming/Projects/particle_simulation/lib/glad",
+    "file": "/files/Programming/Projects/particle_simulation/lib/glad/src/glad.c",
+    "output": "/files/Programming/Projects/particle_simulation/lib/glad/src/glad.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -22,7 +36,41 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
+      "-I",
+      "lib/glad/include",
+      "-o",
+      "src/graphics/scene_obj.o",
+      "src/graphics/scene_obj.c"
+    ],
+    "directory": "/files/Programming/Projects/particle_simulation",
+    "file": "/files/Programming/Projects/particle_simulation/src/graphics/scene_obj.c",
+    "output": "/files/Programming/Projects/particle_simulation/src/graphics/scene_obj.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I",
+      "lib/glfw/include",
+      "-I",
+      "lib/glad/include",
+      "-o",
+      "src/objects/grid_obj.o",
+      "src/objects/grid_obj.c"
+    ],
+    "directory": "/files/Programming/Projects/particle_simulation",
+    "file": "/files/Programming/Projects/particle_simulation/src/objects/grid_obj.c",
+    "output": "/files/Programming/Projects/particle_simulation/src/objects/grid_obj.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -39,7 +87,7 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -56,7 +104,7 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -73,7 +121,41 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
+      "-I",
+      "lib/glad/include",
+      "-o",
+      "src/simulation/cell_rules.o",
+      "src/simulation/cell_rules.c"
+    ],
+    "directory": "/files/Programming/Projects/particle_simulation",
+    "file": "/files/Programming/Projects/particle_simulation/src/simulation/cell_rules.c",
+    "output": "/files/Programming/Projects/particle_simulation/src/simulation/cell_rules.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I",
+      "lib/glfw/include",
+      "-I",
+      "lib/glad/include",
+      "-o",
+      "src/simulation/cells.o",
+      "src/simulation/cells.c"
+    ],
+    "directory": "/files/Programming/Projects/particle_simulation",
+    "file": "/files/Programming/Projects/particle_simulation/src/simulation/cells.c",
+    "output": "/files/Programming/Projects/particle_simulation/src/simulation/cells.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-I",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -90,7 +172,7 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
@@ -107,16 +189,16 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
-      "src/glad.o",
-      "src/glad.c"
+      "src/constants.o",
+      "src/constants.c"
     ],
     "directory": "/files/Programming/Projects/particle_simulation",
-    "file": "/files/Programming/Projects/particle_simulation/src/glad.c",
-    "output": "/files/Programming/Projects/particle_simulation/src/glad.o"
+    "file": "/files/Programming/Projects/particle_simulation/src/constants.c",
+    "output": "/files/Programming/Projects/particle_simulation/src/constants.o"
   },
   {
     "arguments": [
@@ -124,7 +206,7 @@
       "-c",
       "-Wall",
       "-I",
-      "lib/SDL2/include",
+      "lib/glfw/include",
       "-I",
       "lib/glad/include",
       "-o",
