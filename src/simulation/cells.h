@@ -3,6 +3,8 @@
 #include "../utils/basic.h"
 #include <stdbool.h>
 
+static const float gravity = 0.3f;
+
 #define CELL_LAST WATER
 typedef enum CellEnum {
   NONE,
@@ -12,6 +14,7 @@ typedef enum CellEnum {
 
 typedef struct Cell {
   CellEnum type;
+  float velocity[2];
 } Cell;
 
 typedef struct Grid {

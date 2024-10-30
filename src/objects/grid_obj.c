@@ -116,7 +116,7 @@ void tick(GridObj *self) {
   self->cell_repr.ind = indices;
 }
 
-void handleMouseEvent(GridObj *self, int mouseX, int mouseY) {
+void handleMouseEvent(GridObj *self, CellEnum selected, int mouseX, int mouseY) {
   int box_width = self->grid.size.x * self->grid.cols;
   int box_height = self->grid.size.y * self->grid.rows;
 
@@ -127,6 +127,6 @@ void handleMouseEvent(GridObj *self, int mouseX, int mouseY) {
       mouseY > box_start_y && mouseY < box_start_y+box_height) {
     int j = (mouseX - box_start_x) / (self->grid.size.x);
     int i = (mouseY - box_start_y) / (self->grid.size.y);
-    self->grid.cells[i][j].type = SAND; 
+    self->grid.cells[i][j].type = selected; 
   }
 }

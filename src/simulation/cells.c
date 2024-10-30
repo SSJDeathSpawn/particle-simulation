@@ -4,7 +4,8 @@
 
 Cell newCell(CellEnum type){
   return (Cell) {
-    .type=type
+    .type=type, 
+    .velocity = {0.0f, 0.0f}
   };
 }
 

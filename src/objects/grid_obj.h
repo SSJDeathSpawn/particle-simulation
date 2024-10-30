@@ -14,6 +14,6 @@ typedef struct GridObj {
 
 GridObj newGridObj(int box_size, int rows, int cols, Colour outline);
 void tick(GridObj* self);
-void handleMouseEvent(GridObj* self, int mouseX, int mouseY);
+void handleMouseEvent(GridObj* self, CellEnum selected, int mouseX, int mouseY);
 
 #endif //GRID_OBJ_H

@@ -23,6 +23,7 @@ extern const double updateInterval;
 static GLFWwindow *window = NULL;
 static GridObj grid;
 static Mouse mouse;
+static CellEnum selected = SAND;
 
 extern void ruleNone(Grid* grid, int x, int y);
 extern void ruleSand(Grid* grid, int x, int y);
@@ -74,16 +75,29 @@ static void setSwitching(GLFWwindow* window, int button, int action, int mods) {
   }
 }
 
+static void keyboardMethod(GLFWwindow* window, int key, int scancode, int action, int mods) {
+  if (action == GLFW_PRESS) {
+    if(key == GLFW_KEY_LEFT_BRACKET) {
+      if(selected == 1) selected = CELL_LAST;
+      else selected = (CellEnum) (selected - 1);
+    } else if (key == GLFW_KEY_RIGHT_BRACKET) {
+      if(selected == CELL_LAST) selected = 1;
+      else selected = (CellEnum) (selected + 1);
+      printf("%d\n", selected);
+    }
+  }
+}
+
 int main() {
   init_screen("Particle Simulation");
   glfwSetCursorPosCallback(window, handleMouse);
   glfwSetMouseButtonCallback(window, setSwitching);
-
+  glfwSetKeyCallback(window, keyboardMethod);
   //Timer
   double prevTime = glfwGetTime();
   double currTime;
 
-  grid = newGridObj(5, 80, 100, (Colour){1.0f, 1.0f, 1.0f, 1.0f});
+  grid = newGridObj(4, 100, 125, (Colour){1.0f, 1.0f, 1.0f, 1.0f});
   
   //Vertex Layout of basically every object
   VertexLayout *vl;
@@ -105,7 +119,7 @@ int main() {
       if (mouse.isPressed) {
         double xMouse, yMouse;
         glfwGetCursorPos(window, &xMouse, &yMouse); 
-        handleMouseEvent(&grid, xMouse, yMouse);
+        handleMouseEvent(&grid, selected, xMouse, yMouse);
       }
 
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
